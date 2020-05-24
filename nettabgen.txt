@@ -1,0 +1,1145 @@
+<?php session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)
+{    }
+else
+     header("Location: login.php");
+?>
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Automatic Time Table Generator BY NGPR</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+		============================================ -->    <!-- Google Fonts
+		============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700" rel="stylesheet">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <!-- owl.carousel CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- animate CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- normalize CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- meanmenu icon CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/meanmenu.min.css">
+    <!-- main CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- morrisjs CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/morrisjs/morris.css">
+    <!-- mCustomScrollbar CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- metisMenu CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/metisMenu/metisMenu.min.css">
+    <link rel="stylesheet" href="css/metisMenu/metisMenu-vertical.css">
+    <!-- calendar CSS
+		============================================ -->
+
+    <!-- style CSS
+		============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr JS
+		============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style >
+      .coloumncard{
+        position: absolute;
+        display: block;
+        right: 0;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body style="background-color: whitesmoke">
+
+            <br>
+           <link rel="stylesheet" href="css/generate.css">
+           <br>
+        
+        <div class="container-fluid">
+            <div class="col-md-4" style="width:100%;">
+                <div class="form_main">
+<table id="mytable" border="2" cellspacing="3" align="center" cellpadding="10">
+                        <tr>
+            <td align="center"></td>
+            <td align="center" colspan="7"><strong>MONDAY</strong></td>
+            <td align="center" colspan="7"><strong>TUESDAY</strong></td>
+            <td align="center" colspan="7"><strong>WEDNESDAY</strong></td>
+            <td align="center" colspan="7"><strong>THURSDAY</strong></td>
+            <td align="center" colspan="7"><strong>FRIDAY</strong></td>
+            </tr>
+            
+            <tr>
+                         <td align="center"></td>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             </tr>
+                         <tr id="se">
+                          <td align="center" style="padding: 8px;"><strong>SE</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+               <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+               <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="te">
+                          <td align="center"><strong>TE</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="be">
+                          <td align="center"><strong>BE</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+
+                          </table>
+              <br>
+            <table id="mech" border="2" cellspacing="3" align="center" cellpadding="10" style="display: none;">
+                        <tr>
+            <td align="center"></td>
+            <td align="center" colspan="7"><strong>MONDAY</strong></td>
+            <td align="center" colspan="7"><strong>TUESDAY</strong></td>
+            <td align="center" colspan="7"><strong>WEDNESDAY</strong></td>
+            <td align="center" colspan="7"><strong>THURSDAY</strong></td>
+            <td align="center" colspan="7"><strong>FRIDAY</strong></td>
+            </tr>
+            
+            <tr>
+                         <td align="center"></td>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             </tr>
+                         <tr id="semama">
+                          <td align="center" style="padding: 8px;"><strong>SEMECH(A)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+
+                          </tr>
+              
+              
+                         <tr id="temama">
+                          <td align="center"><strong>TEMECH(A)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="bemama">
+                          <td align="center"><strong>BEMECH(A)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+
+                            <tr id="sembmb">
+                          <td align="center" style="padding: 8px;"><strong>SEMECH(B)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                           <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="tembmb">
+                          <td align="center"><strong>TEMECH(B)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="bembmb">
+                          <td align="center"><strong>BEMECH(B)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+                          </table>
+                          <br>
+
+                          <table id="FE" border="2" cellspacing="3" align="center" cellpadding="10" style="display: none;">
+                        <tr>
+            <td align="center"></td>
+            <td align="center" colspan="7"><strong>MONDAY</strong></td>
+            <td align="center" colspan="7"><strong>TUESDAY</strong></td>
+            <td align="center" colspan="7"><strong>WEDNESDAY</strong></td>
+            <td align="center" colspan="7"><strong>THURSDAY</strong></td>
+            <td align="center" colspan="7"><strong>FRIDAY</strong></td>
+            </tr>
+            
+            <tr>
+                         <td align="center"></td>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         
+             </tr>
+                         <tr id="fea">
+                          <td align="center" style="padding: 8px;"><strong>FE(A)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+               <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+               <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="feb">
+                          <td align="center"><strong>FE(B)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+              <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+              
+              
+                         <tr id="fec">
+                          <td align="center"><strong>FE(C)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+                          
+                          <tr id="fed">
+                          <td align="center"><strong>FE(D)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+                          <tr id="fee">
+                          <td align="center"><strong>FE(E)</strong></td>
+                          <td align="center" id="10" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)"  ondragover="allowDrop(event)"></td>
+                          <td align="center" id="11" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="12" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="13" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="14" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="15" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="16" ondragstart="drag2(event,this.id)" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+                          <td align="center" id="20" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="21" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="22" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="23" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="24" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="25" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="26" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>  
+                          
+              <td align="center" id="30" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="31" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="32" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="33" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="34" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="35" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="36" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="40" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="41" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="42" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="43" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="44" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="45" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          <td align="center" id="46" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          
+              <td align="center" id="50" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="51" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="52" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="53" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="54" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="55" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                           <td align="center" id="56" ondrop="drop(event,this.id)" ondragover="allowDrop(event)"></td>
+                          </tr>
+                          </table>
+
+                      <div class="mydiv" style="background-color: gainsboro" align="center">
+
+                      <input type="submit" style="background-color: darkslategrey;color: white" class="btn btn-primary" href="" onclick="window.print()"  value="TTPrint">
+                      <input type="submit" style="background-color: darkslategrey;color: white" class="btn btn-primary" onclick="window.print()"  value="CPrint">
+                      <input type="submit" style="background-color: darkslategrey;color: white" class="btn btn-primary" onclick="window.print()"  value="TPrint">
+                      <input type="submit" style="background-color: darkslategrey;color: white" class="btn btn-primary" onclick="window.print()"  value="LABPrint">
+</div>
+                      <br>
+                      
+                      <div id="tray" style="width:75%;">
+                      <?php
+                        include "connect.php";
+
+                        echo "FE<br>";
+                        $query = "SELECT * FROM lecture WHERE class='fe' AND department='{$_SESSION['de']}' AND sem='{$_SESSION['eo']}'";
+                        $result = mysqli_query($connect,$query); 
+                        $query2 = "SELECT * FROM subject WHERE department='{$_SESSION['de']}'";
+                        $result2 = mysqli_query($connect,$query2);
+                        $query3 = "SELECT * FROM teachercolor";
+                        $result3 = mysqli_query($connect,$query3);
+                        $i=1;
+                        $k=0;
+                           echo '<div class="rowcard" >';                         
+                            while($row=mysqli_fetch_array($result)){
+
+                                                    while($rs=mysqli_fetch_array($result2)){
+                                                        if($rs['subnm']==$row['subnm'] )
+                                                        {
+                                                          if($row['lectype']=="Th")
+                                                             $count = $rs['subth'];
+                                                           elseif($row['lectype']=="Tut")
+                                                              $count = $rs['subtu'];
+                                                            else
+                                                              $count = $rs['subpr'];
+
+                                                            break;
+                                                        }
+                                                      }mysqli_data_seek($result2,0);
+                                                      while($count>0){
+                                                         while($rs3=mysqli_fetch_array($result3)){
+                                                        if($rs3['teanm']==$row['teanm'] ){
+                                                     break;}
+                                                    } mysqli_data_seek($result3,0);
+                                                    ?>
+                                                    <div class="columncard padding-0"  ><td><tr>
+                                                      <div id="fedrag<?php echo $i.$count;?>" class="card"draggable="true" ondragstart="drag(event)"><?php if($row['lectype']=="Th"){echo $row['subnm'];}elseif($row['lectype']=="Tut")echo $row['subnm'].'_Tut';else{ echo $row['subnm'].'_Lab<br>'; echo $row['lectype'];}?><br><?php echo $row['teanm']; ?><br><?php echo $row['crnm']; ?>
+                                                    </div>
+                                                  </tr>
+                                                </td>
+                                                  </div>
+
+                                                    <script>
+                                                    
+                                                    var x = document.getElementsByClassName("card");
+                                                    x[<?php echo $k;?>].style.backgroundColor = "<?php echo $rs3['teacol']; ?>";
+                                                    
+                                                    </script>
+                                                   <?php $k++;$count--;
+                                                     }$i++;
+                                                  }
+                          echo '</div>';
+                      ?>
+                                            <br><br>
+                      <?php
+                        include "connect.php";
+                        
+                        echo "SE<br>";
+                        $query = "SELECT * FROM lecture WHERE class='se' AND department='{$_SESSION['de']}' AND sem='{$_SESSION['eo']}'";
+                        $result = mysqli_query($connect,$query); 
+                        $query2 = "SELECT * FROM subject  WHERE department='{$_SESSION['de']}'";
+                        $result2 = mysqli_query($connect,$query2);
+                        $query3 = "SELECT * FROM teachercolor";
+                        $result3 = mysqli_query($connect,$query3);
+                        $i=1;
+                        
+                          
+                           echo '<div class="rowcard" >';  
+
+                            while($row=mysqli_fetch_array($result)){
+                                                     
+                                                    while($rs=mysqli_fetch_array($result2)){
+                                                        if($rs['subnm']==$row['subnm'] )
+                                                        {
+                                                          if($row['lectype']=="Th")
+                                                             $count = $rs['subth'];
+                                                           elseif($row['lectype']=="Tut")
+                                                              $count = $rs['subtu'];
+                                                            else
+                                                              $count = $rs['subpr']/2;
+
+                                                            break;
+                                                        }
+                                                      } mysqli_data_seek($result2,0);
+
+                                                      while($count>0){
+                                                     
+                                                        while($rs3=mysqli_fetch_array($result3)){
+                                                        if($rs3['teanm']==$row['teanm'] ){
+                                                     break;}
+                                                    } mysqli_data_seek($result3,0);
+                                                    ?>
+                                                    <div class="columncard" >
+                                                      <tr>
+                                                        <div id="sedrag<?php echo $i.$count;?>" class="card"draggable="true" ondragstart="drag(event)"><?php if($row['lectype']=="Th"){echo $row['subnm'];}elseif($row['lectype']=="Tut")echo $row['subnm'].'_Tut';else{ echo $row['subnm'].'_Lab<br>'; echo $row['lectype'];}?><br><?php echo $row['teanm']; ?><br><?php echo $row['crnm']; ?></div>
+</tr>
+                                                      </div>
+                                                   <script>
+                                                    
+                                                    var x = document.getElementsByClassName("card");
+                                          
+                                                    x[<?php echo $k;?>].style.backgroundColor = "<?php echo $rs3['teacol']; ?>";
+                                                    
+                                                    </script>
+                                                    
+                                                   <?php $k++;$count--;
+                                                  
+                                                    }$i++; 
+                                                  }
+
+                                                  
+                          echo '</div>';
+                      ?>
+                      <br><br><br>
+                      
+                       <?php
+                        include "connect.php";
+                        echo "TE<br>";
+                        $query = "SELECT * FROM lecture WHERE class='te' AND department='{$_SESSION['de']}' AND sem='{$_SESSION['eo']}'";
+                        $result = mysqli_query($connect,$query); 
+                        $query2 = "SELECT * FROM subject WHERE department='{$_SESSION['de']}'";
+                        $result2 = mysqli_query($connect,$query2);
+                        $query3 = "SELECT * FROM teachercolor";
+                        $result3 = mysqli_query($connect,$query3);
+                        $i=1;
+                        
+                           echo '<div class="rowcard">';                         
+                            while($row=mysqli_fetch_array($result)){
+                                                      
+                                                    while($rs=mysqli_fetch_array($result2)){
+                                                        if($rs['subnm']==$row['subnm'] )
+                                                        {
+                                                          if($row['lectype']=="Th")
+                                                             $count = $rs['subth'];
+                                                           elseif($row['lectype']=="Tut")
+                                                              $count = $rs['subtu'];
+                                                            else
+                                                              $count = $rs['subpr'];
+
+                                                            break;
+                                                        }
+                                                      }mysqli_data_seek($result2,0);
+                                                      ?><script>
+                                                      var z=10;
+                                                      var top1="20px";
+                                                      var left1="20px";
+                                                      </script>
+                                                      <?php
+                                                      while($count>0){
+
+                                                        while($rs3=mysqli_fetch_array($result3)){
+                                                        if($rs3['teanm']==$row['teanm'] ){
+                                                     break;}
+                                                    } mysqli_data_seek($result3,0);
+                                                    ?>
+                                                      
+
+                                                    <div class="columncard"><div id="tedrag <?php echo $i.$count;?>" class="card"draggable="true" ondragstart="drag(event)"><?php if($row['lectype']=="Th"){echo $row['subnm'];}elseif($row['lectype']=="Tut")echo $row['subnm'].'_Tut';else{ echo $row['subnm'].'_Lab<br>'; echo $row['lectype'];}?><br><?php echo $row['teanm']; ?><br><?php echo $row['crnm']; ?></div></div>
+                                                    <script>
+                                                    
+                                                    var x = document.getElementsByClassName("card");
+                                                    x[<?php echo $k;?>].style.backgroundColor = "<?php echo $rs3['teacol']; ?>";
+                                                    
+                                                    </script>
+                                                    <script>
+                                                     
+                                                    var x = document.getElementsByClassName("card");
+                                                    x[<?php echo $k;?>].style.zIndex = "z";
+                                                    
+                                                    //x[<?php echo $k;?>].style.top = top1;
+                                                    //x[<?php echo $k;?>].style.left = left1;
+                                                    
+                                                    //var top1 = parseInt(top1,10)+parseInt("20px",10)+"px";
+                                                    //var left1 = parseInt(left1,10)+parseInt("20px",10)+"px";
+                                                    z = z+1;
+                                                      </script> 
+                                                   <?php $k++;$count--;
+                                                     }$i++;
+                                                  }
+                          echo '</div>';
+                      ?>
+                      <br><br><br>
+                       <?php
+                        include "connect.php";
+                        echo "BE<br>";
+                        $query = "SELECT * FROM lecture WHERE class='be' AND department='{$_SESSION['de']}' AND sem='{$_SESSION['eo']}'";
+                        $result = mysqli_query($connect,$query); 
+                        $query2 = "SELECT * FROM subject";
+                        $result2 = mysqli_query($connect,$query2);
+                        $query3 = "SELECT * FROM teachercolor";
+                        $result3 = mysqli_query($connect,$query3);
+                        $i=1;
+                           echo '<div class="rowcard">';                         
+                            while($row=mysqli_fetch_array($result)){
+                                                    
+                                                    while($rs=mysqli_fetch_array($result2)){
+                                                        if($rs['subnm']==$row['subnm'] )
+                                                        {
+                                                          if($row['lectype']=="Th")
+                                                             $count = $rs['subth'];
+                                                           elseif($row['lectype']=="Tut")
+                                                              $count = $rs['subtu'];
+                                                            else
+                                                              $count = $rs['subpr'];
+
+                                                            break;
+                                                        }
+                                                      }mysqli_data_seek($result2,0);
+                                                      while($count>0){
+
+                                                        while($rs3=mysqli_fetch_array($result3)){
+                                                        if($rs3['teanm']==$row['teanm'] ){
+                                                     break;}
+                                                    } mysqli_data_seek($result3,0);
+                                                    ?>
+                                                      
+                                                    <div class="columncard"><div id="bedrag<?php echo $i.$count;?>" class="card"draggable="true" ondragstart="drag(event)"><?php if($row['lectype']=="Th"){echo $row['subnm'];}elseif($row['lectype']=="Tut")echo $row['subnm'].'_Tut';else{ echo $row['subnm'].'_Lab<br>'; echo $row['lectype'];}?><br><?php echo $row['teanm']; ?><br><?php echo $row['crnm']; ?></div></div>
+
+                                                    <script>
+                                                    
+                                                    var x = document.getElementsByClassName("card");
+                                                    x[<?php echo $k;?>].style.backgroundColor = "<?php echo $rs3['teacol']; ?>";
+                                                    
+                                                    </script>
+                                                   <?php $k++;$count--;
+                                                     }$i++;
+                                                  }
+                          echo '</div>';
+                      ?>
+                      </div>
+                      <div id=mouse>
+                        lafhodhfpoiuadgfpigi
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jquery
+		============================================ -->
+        <script src="js/generate.js"></script>
+
+    <script src="js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- wow JS
+		============================================ -->
+    <script src="js/wow.min.js"></script>
+    <!-- price-slider JS
+		============================================ -->
+    <script src="js/jquery-price-slider.js"></script>
+    <!-- meanmenu JS
+		============================================ -->
+    <script src="js/jquery.meanmenu.js"></script>
+    <!-- owl.carousel JS
+		============================================ -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- sticky JS
+		============================================ -->
+    <script src="js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+		============================================ -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- mCustomScrollbar JS
+		============================================ -->
+    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/scrollbar/mCustomScrollbar-active.js"></script>
+    <!-- metisMenu JS
+		============================================ -->
+    <script src="js/metisMenu/metisMenu.min.js"></script>
+    <script src="js/metisMenu/metisMenu-active.js"></script>
+    <!-- plugins JS
+		============================================ -->
+    <script src="js/plugins.js"></script>
+    <!-- main JS
+		============================================ -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

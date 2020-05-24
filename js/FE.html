@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Demo Print Preview</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/printPreview.js"></script>
+<script type="text/javascript">
+        $(function(){
+            $("#btnPrint").printPreview({
+                obj2print:'#masterContent',
+                width:'10100'
+            });
+        });
+    </script>
+<style> ype="text/css" media="print">
+div.page {
+height: 750px;
+width: 800px;
+filter: progid:D/XImageTransform.Microsoft.BasicImage(Rotation=1);}
+
+
+/*    *{
+        margin:0px;
+        padding:0px;
+        font-family: arial;
+    }
+    body{
+        background: #EEE;
+    }
+    #header{
+        background: #666;
+        color:#FFF;
+        height:100px;
+        padding: 50px;
+    }
+    .clear{
+        clear:both;
+    }
+    #sideMenu{
+        width:200px;
+        float:left;
+        background: #FFC;
+        margin: 10px;
+        min-height: 700px;
+    }
+    #sideMenu ul li{
+        list-style: none;
+        padding: 5px;
+        border-bottom: 1px dotted #CCC;
+    }
+    #masterContent{
+        background: #FFF;
+        float: left;
+        width: 760px;
+        padding: 10px;
+        margin: 10px;
+    }
+    #masterContent ol{
+        margin-left: 20px;
+    }
+    #masterContent pre{
+        background: #EEE;
+        color:blue;
+        padding:10px;
+        width: 96%;
+        display: inline-block;
+        overflow: auto;
+        font-size: 85%;
+    }
+    .note{
+        color:red;
+    }
+    #footer{
+        text-align: center;
+        padding: 20px;
+        font-size: 85%;
+        background: #666;
+        color:#FFF;
+    }
+    #hi{
+		margin-left:200px;
+    }
+    #btnprint{
+        text-align: center;
+        }
+        */
+</style>
+</head>
+<body>
+<div class="page">
+   <div id="hi">
+        <div id="masterContent">
+ 						  <br>
+                          <h4 align="center" > FE(A) </h4>
+                          <br>
+        <table border="5" cellspacing="5" align="center" cellpadding="10">
+                        <tr>
+                         <td align="center"><input hidden unchecked type="checkbox"></input>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:00-11:15</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>1:15-2:00</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         </tr>
+                         <tr>
+                          <td align="center">MONDAY</td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">TUESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>  
+                          </tr>
+                          <tr>
+                          <td align="center">WEDNESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">THURSDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          <tr>
+                           <td align="center">FRIDAY
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          </table>
+                           <br>
+                          <h4 align="center" > FE(B) </h4>
+                          <br>
+                           <table border="5" cellspacing="5" align="center" cellpadding="10">
+                        <tr>
+                         <td align="center"><input hidden unchecked type="checkbox"></input>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:00-11:15</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>1:15-2:00</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         </tr>
+                         <tr>
+                          <td align="center">MONDAY</td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">TUESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>  
+                          </tr>
+                          <tr>
+                          <td align="center">WEDNESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">THURSDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          <tr>
+                           <td align="center">FRIDAY
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          </table>
+                         <br>
+                          <h4 align="center" > FE(C) </h4>
+                          <br>
+                           <table border="5" cellspacing="5" align="center" cellpadding="10">
+                        <tr>
+                         <td align="center"><input hidden unchecked type="checkbox"></input>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:00-11:15</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>1:15-2:00</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         </tr>
+                         <tr>
+                          <td align="center">MONDAY</td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">TUESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>  
+                          </tr>
+                          <tr>
+                          <td align="center">WEDNESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">THURSDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          <tr>
+                           <td align="center">FRIDAY
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          </table>
+                          <br>
+                          <h4 align="center" > FE(D) </h4>
+                          <br>
+ <table border="5" cellspacing="5" align="center" cellpadding="10">
+                        <tr>
+                         <td align="center"><input hidden unchecked type="checkbox"></input>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:00-11:15</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>1:15-2:00</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         </tr>
+                         <tr>
+                          <td align="center">MONDAY</td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">TUESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>  
+                          </tr>
+                          <tr>
+                          <td align="center">WEDNESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">THURSDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          <tr>
+                           <td align="center">FRIDAY
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          </table>
+<br>
+                          <h4 align="center" > FE(E) </h4>
+                          <br>
+<table border="5" cellspacing="5" align="center" cellpadding="10">
+                        <tr>
+                         <td align="center"><input hidden unchecked type="checkbox"></input>
+                         <td>9:00-10:00</td>
+                         <td>10:00-11:00</td>
+                         <td>11:00-11:15</td>
+                         <td>11:15-12:15</td>
+                         <td>12:15-1:15</td>
+                         <td>1:15-2:00</td>
+                         <td>2:00-3:00</td>
+                         <td>3:00-4:00</td>
+                         <td>4:00-5:00</td>
+                         </tr>
+                         <tr>
+                          <td align="center">MONDAY</td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td rowspan="6"align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">TUESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>  
+                          </tr>
+                          <tr>
+                          <td align="center">WEDNESDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          </tr>
+                          <tr>
+                          <td align="center">THURSDAY
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                          <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          <tr>
+                           <td align="center">FRIDAY
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                           <td align="center"></td>
+                          </tr>
+                          </table>
+                          </div>
+<br>
+            <button  id="btnPrint">Print Preview</button>
+      
+  
+</body>
+</html>

@@ -1,0 +1,200 @@
+
+
+input[type="text"],input[type="number"]{
+    width:150px;
+}
+
+#filldetails0,#filldetails1,#filldetails2,#filldetails3{
+    background: lightblue;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+}
+#filldetails0:hover,#filldetails1:hover,#filldetails2:hover,#filldetails3:hover{
+    background: lightgreen;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+}
+.form_main {
+    width: 100%;
+    height: 1200px;
+    
+    
+}
+.form_main h4 {
+    font-family: "Arial";
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+    font-family: "Arial";
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
+    font-size: 20px;
+}
+.heading span {
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+    font-size: 20px;
+    font-family: "Arial";
+}
+.txt[type="text"] {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt_3[type="text"] {
+    margin: 10px 0 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt2[type="submit"],input[type="button"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 12%;
+}
+.txt2:hover,input[type="button"]:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+#container0,#container1,#container2,#container3{
+margin: 5px 5px;
+}
+
+#container1[type="input"]{
+width: 20%;
+
+}
+table{
+    border:1px solid black;
+    padding: 2px;
+    background:lightgrey;
+    border-collapse: collapse;
+    
+}
+th{
+    height:50px;
+}
+td{
+    height:60px;
+    width:100px;
+    font-size: 10px;
+}
+#delbut,#editbut{
+    width:10%;
+    background: lightblue;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+    
+}
+#delbut:hover,#editbut:hover{
+    background: lightgreen;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+    
+}
+/* Float four columns side by side */
+.columncard {
+  float: left;
+  width: 100px;
+  height:100px;
+  padding: 5px 10px;
+  background-color: SkyBlue;
+
+  
+
+}
+
+/* Remove extra left and right margins, due to padding */
+.rowcard {margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.rowcard:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Responsive columns */
+
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  text-align: center;
+  background-color: Salmon;
+  height:60px;
+  font-size: 10px;
+  cursor: move;
+  z-index: 10;
+  font-weight: bold;
+  
+
+}
+
+#tray{
+    float:left;
+    border:2px solid black;
+    height:200px;
+    width:65%;
+    background-color:lightblue;
+    overflow-x:hidden;
+    position: fixed;
+    bottom:15px;  
+    margin-left: 40px;                     
+  
+}
+#displaybox{
+    float:left;
+    border:2px solid black;
+    height:200px;
+    width:12%;
+    background-color:Khaki;
+    text-align: center;
+    font-size:20px;
+    padding-top: 30px;
+    overflow-x:hidden;
+    position: fixed;
+    bottom:15px;  
+    margin-left: 910px;
+}
+#spacing{
+    height:40px;
+    width:50px;
+    border:1px;
+}

@@ -1,0 +1,129 @@
+
+form_main {
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.form_main h4 {
+    font-family: "Arial";
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+select{
+    width:300px;
+    height:35px;
+    background-color: PeachPuff;
+}
+.heading {
+    border-bottom: 1px solid #fcab0e;
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: #9e6600 none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}   
+.form {
+    border-radius: 7px;
+    padding: 6px;
+    font-family: "Arial";
+    font-size: 16px;
+}
+.txt[type="text"],.txt[type="number"] {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 30%;
+}
+.txt2[type="submit"],input[type="button"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    width: 10%;
+}
+.txt2:hover,input[type="button"]:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+
+td{
+    width:500px;
+    padding:5px;
+
+}
+#upout{
+    border:1px solid black;
+    border-bottom: none;
+    height:40px;
+}
+#botout{
+    border:1px solid black;
+    border-top: none;
+}
+
+table{
+    background-color: Lavender;
+    padding:10px;
+}
+th{
+    height:50px;
+    background-color: Salmon;
+}
+td{
+    width:300px;
+}
+
+#delbut,#editbut{
+    width:10%;
+    background: lightblue;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+    
+}
+#delbut:hover,#editbut:hover{
+    background: lightgreen;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 15px;
+    padding:5px;
+    color:black;
+    
+}
+
+table#tablec >tbody >tr{
+    height:50px;
+}
+.txt3[type="button"] {
+    background:  #FF4500 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    width: 10%;
+}
+.txt3:hover{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
